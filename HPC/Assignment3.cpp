@@ -33,7 +33,7 @@ int maxval(int arr[], int n){
 int sum(int arr[], int n){
   int sum = arr[0];
   #pragma omp parallel for reduction(+ : sum)
-    for(int i = 0; i < n; i++){
+    for(int i = 1; i < n; i++){
       sum += arr[i];
     }
   return sum;
